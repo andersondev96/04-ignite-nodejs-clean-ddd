@@ -1,4 +1,4 @@
-import { Answer } from '../entities/answer'
+import { Answer } from '../../entreprise/entities/answer'
 import { AnswersRepository } from '../repositories/answers-repository'
 import { AnswerQuestionUseCase } from './answer-question'
 
