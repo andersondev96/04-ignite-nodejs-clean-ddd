@@ -1,4 +1,4 @@
-import { Question } from '../../entreprise/entities/question'
+import { Question } from '../../enterprise/entities/question'
 
 export interface QuestionsRepository {
   findBySlug(slug: string): Promise<Question | null>
