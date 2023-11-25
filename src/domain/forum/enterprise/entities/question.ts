@@ -26,6 +26,10 @@ export class Question extends Entity<QuestionProps> {
     return this.props.title
   }
 
+  get content() {
+    return this.props.content
+  }
+
   get slug() {
     return this.props.slug
   }
@@ -53,6 +57,7 @@ export class Question extends Entity<QuestionProps> {
   set title(title: string) {
     this.props.title = title
     this.props.slug = Slug.createFromText(title)
+
     this.touch()
   }
 
