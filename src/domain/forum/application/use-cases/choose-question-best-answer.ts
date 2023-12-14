@@ -42,7 +42,7 @@ export class ChooseQuestionBestAnswerUseCase {
     }
 
     if (authorId !== question.authorId.toString()) {
-      return left(new ResourceNotFoundError())
+      return left(new NotAllowedError())
     }
 
     question.bestAnswerId = answer.id

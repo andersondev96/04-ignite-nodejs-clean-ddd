@@ -13,6 +13,7 @@ export interface QuestionProps {
   createdAt: Date
   updatedAt?: Date
 }
+
 export class Question extends Entity<QuestionProps> {
   get authorId() {
     return this.props.authorId
