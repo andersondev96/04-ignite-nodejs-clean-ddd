@@ -1,4 +1,4 @@
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { makeAnswer } from 'test/factories/make-answer'
 import { InMemoryAnswerAttachmentsRepository } from 'test/repositories/in-memory-answer-attachments-repository'
 import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository'
@@ -21,17 +21,17 @@ describe('Fetch Question Answers', () => {
   it('should be able to fetch question answers', async () => {
     await inMemoryAnswersRepository.create(
       makeAnswer({
-        questionId: new UniqueEntityId('question-1'),
+        questionId: new UniqueEntityID('question-1'),
       }),
     )
     await inMemoryAnswersRepository.create(
       makeAnswer({
-        questionId: new UniqueEntityId('question-1'),
+        questionId: new UniqueEntityID('question-1'),
       }),
     )
     await inMemoryAnswersRepository.create(
       makeAnswer({
-        questionId: new UniqueEntityId('question-1'),
+        questionId: new UniqueEntityID('question-1'),
       }),
     )
 
@@ -47,7 +47,7 @@ describe('Fetch Question Answers', () => {
     for (let i = 1; i <= 22; i++) {
       await inMemoryAnswersRepository.create(
         makeAnswer({
-          questionId: new UniqueEntityId('question-1'),
+          questionId: new UniqueEntityID('question-1'),
         }),
       )
     }

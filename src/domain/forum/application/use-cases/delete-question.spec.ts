@@ -1,4 +1,4 @@
-import { UniqueEntityId } from '@/core/entities/unique-entity-id'
+import { UniqueEntityID } from '@/core/entities/unique-entity-id'
 import { NotAllowedError } from '@/core/errors/not-allowed-error'
 import { makeQuestion } from 'test/factories/make-question'
 import { makeQuestionAttachment } from 'test/factories/make-question-attachment'
@@ -23,9 +23,9 @@ describe('Delete Question', () => {
   it('should be able to delete a question', async () => {
     const newQuestion = makeQuestion(
       {
-        authorId: new UniqueEntityId('author-1'),
+        authorId: new UniqueEntityID('author-1'),
       },
-      new UniqueEntityId('question-1'),
+      new UniqueEntityID('question-1'),
     )
 
     inMemoryQuestionsRepository.create(newQuestion)
@@ -33,11 +33,11 @@ describe('Delete Question', () => {
     inMemoryQuestionAttachmentsRepository.items.push(
       makeQuestionAttachment({
         questionId: newQuestion.id,
-        attachmentId: new UniqueEntityId('1'),
+        attachmentId: new UniqueEntityID('1'),
       }),
       makeQuestionAttachment({
         questionId: newQuestion.id,
-        attachmentId: new UniqueEntityId('2'),
+        attachmentId: new UniqueEntityID('2'),
       }),
     )
 
@@ -53,9 +53,9 @@ describe('Delete Question', () => {
   it('should not be able to delete a question from another user', async () => {
     const newQuestion = makeQuestion(
       {
-        authorId: new UniqueEntityId('author-1'),
+        authorId: new UniqueEntityID('author-1'),
       },
-      new UniqueEntityId('question-1'),
+      new UniqueEntityID('question-1'),
     )
 
     inMemoryQuestionsRepository.create(newQuestion)
